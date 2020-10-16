@@ -1,0 +1,40 @@
+<div class="title"> Your Personal Information </div>
+
+<div class="container">
+  <ng-container *ngIf="secureService.getService()==='company'; else elseTemplate">
+    <article class="card card--2">
+      <div class="card__img"></div>
+      <div class="card__img--hover"></div>
+      <div class="card__info">
+        <div class="card_details">
+          <p> ID : <span class="card__detail"> {{company.id}}</span></p>
+          <p> Email : <span class="card__detail"> {{company.email}}</span></p>
+          <p> Password : <span class="card__detail"> {{company.password}}</span></p>
+          <p> Name : <span class="card__detail"> {{company.name}}</span></p>
+        </div>
+      </div>
+      <div class="edit">
+        <button mat-raised-button color="primary" (click)="updateCompany()">Edit</button>
+      </div>
+    </article>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <article class="card card--2">
+      <div class="card__img"></div>
+      <div class="card__img--hover"></div>
+      <div class="card__info">
+        <div class="card_details">
+          <p> ID : <span class="card__detail"> {{customer.id}}</span></p>
+          <p> Email : <span class="card__detail"> {{customer.email}}</span></p>
+          <p> Password : <span class="card__detail"> {{customer.password}}</span></p>
+          <p> First Name : <span class="card__detail"> {{customer.firstName}}</span></p>
+          <p> Last Name : <span class="card__detail"> {{customer.lastName}}</span></p>
+        </div>
+      </div>
+      <div class="edit">
+        <button mat-raised-button color="primary" (click)="updateCustomer()">Edit</button>
+      </div>
+    </article>
+  </ng-template>
+
+</div>

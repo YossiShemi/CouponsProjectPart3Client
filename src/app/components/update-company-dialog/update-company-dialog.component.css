@@ -1,0 +1,19 @@
+.updateCompanyDialog {
+  padding: 15px;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+}
+
+.companyUpdate {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+}

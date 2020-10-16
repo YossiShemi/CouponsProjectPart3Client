@@ -1,0 +1,36 @@
+<div class="couponCategoryTitle"> {{category}}</div>
+
+<hr>
+
+<div class="cards-container">
+  <button mat-fab aria-label="Example icon button with a bookmark icon" class="arrowButton" (click)="prev()"
+  [disabled]="disablePrev" *ngIf="coupons && coupons.length>4">
+    ◄
+  </button>
+  
+  <div class="cards">
+    <mat-card class="card" *ngFor="let coupon of coupons2">
+      <div class="ribbon ribbon-top-right" *ngIf="coupon.price%5===0"><span> &nbsp;&nbsp;&nbsp;  🔥🔥HOT ITEM🔥🔥   </span></div>
+      <mat-card-header>
+        <div mat-card-avatar class="card-small-image"></div>
+        <mat-card-title class="maintitle">{{coupon.title}}</mat-card-title>
+        <mat-card-subtitle class="subtitle">Price: {{coupon.price}}$ | Amount: {{coupon.amount}} </mat-card-subtitle>
+      </mat-card-header>
+      <img src={{coupon.image}} alt="">
+      <mat-card-content>
+        <p>
+          {{coupon.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="purchase" [disabled]=" !(secureService.getService()==='customer')"
+          (click)="purchaseCoupon(coupon)">Purchase</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <button mat-fab aria-label="Example icon button with a bookmark icon" class="arrowButton" (click)="next()"
+  [disabled]="disableNext" *ngIf="coupons.length>4">
+    ►
+  </button>
+</div>

@@ -1,0 +1,22 @@
+.addCouponDialog {
+  padding: 15px;
+  text-align: center;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+}
+
+.couponAdd {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
+.buttons {
+  display: flex;
+}

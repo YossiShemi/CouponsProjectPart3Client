@@ -1,0 +1,253 @@
+.couponCategoryTitle {
+  margin-top: 50px;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: 'Balsamiq Sans', cursive;  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 5px 5px 2px #cccccc;
+}
+
+hr {
+  margin-top: 5px;
+  width: 65%;
+  margin: auto;
+  border: 0;
+  height: 1.2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.cards-container {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.cards {
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.card {
+  width: 280px;
+  height: 400px;
+  margin: 30px 15px 0px 10px;
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  background-color: #f4f4f4;
+}
+
+img {
+  border-radius: 50px;
+  width: 80%;
+  height: 53%;
+}
+
+.card-small-image {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHuU3fsChNHrhRaTB7dVnHuT6afQlVOPdnTQ&usqp=CAU');
+  background-size: cover;
+}
+
+p,
+mat-card-content {
+  margin-top: 5px;
+  width: 250px;
+  text-align: center;
+}
+
+
+.purchase {
+  bottom: 0;
+}
+
+.arrowButton {
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: 200px;
+  outline: none;
+}
+
+/* common */
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid black;
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: red;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* top right*/
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+
+
+
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 850px) {
+
+  hr {
+    width: 90%;
+    border: 0;
+    height: 2px;
+  }
+
+
+  .cards-container {
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .cards {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 150px;
+    height: 350px;
+    margin: 30px 15px 0px 10px;
+    transition: transform .2s;
+  }
+
+  .card-small-image {
+    display: none;
+  }
+
+  mat-card-header {
+    text-align: center;
+  }
+
+  .maintitle {
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  img {
+    border-radius: 30px;
+    width: 70%;
+    height: 30%;
+  }
+
+  p,
+  mat-card-content {
+    margin-top: 5px;
+    width: 150px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .arrowButton {
+    background-color: white;
+    color: black;
+    margin: 200px 5px 0 10px;
+    width: 6%;
+    line-height: 2px;
+    outline: none;
+    font-size: 15px;
+  }
+
+
+
+  mat-card-subtitle {
+    font-size: 15px;
+  }
+
+/* common */
+.ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: red;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.ribbon-top-right {
+  top: -7px;
+  right: -7px;
+}
+
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+
+}

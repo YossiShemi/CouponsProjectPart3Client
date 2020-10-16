@@ -1,0 +1,55 @@
+<div class="appbar">
+
+  <div class="logo" [routerLink]="['/homepage'] ">
+    <img src="../../../assets/images/logo.png" alt="">
+  </div>
+
+  <div class="hello">
+    <ng-container *ngIf="secureService.getIsLoggedIn(); else guest">
+      <p>Hi <span> -{{getTitle()}}- 👏</span> </p>
+    </ng-container>
+    <ng-template #guest>
+      <p> Welcome <span> Guest </span> <span class="wave-emoji"> 👋</span> </p>
+    </ng-template>
+
+    <p class="date">{{date | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+
+  </div>
+
+
+  <div class="options">
+    <ng-container *ngIf="secureService.getIsLoggedIn(); else elseTemplate">
+      <button *ngIf="secureService.getService()==='admin'" mat-fab title="admin" [routerLink]="['/admin']"
+        color="default">
+        <mat-icon>date_range</mat-icon>
+      </button>
+      <button *ngIf="secureService.getService()==='company'" mat-fab title="company" [routerLink]="['/company']"
+        color="default">
+        <mat-icon>date_range</mat-icon>
+      </button>
+      <button *ngIf="secureService.getService()==='customer'" mat-fab title="cusotmer" [routerLink]="['/customer']"
+        color="default">
+        <mat-icon>date_range</mat-icon>
+      </button>
+      <button mat-fab color="primary" title="Details" [routerLink]="['/details']"
+        *ngIf="secureService.getService()!=='admin'">
+        <mat-icon [inline]="true">account_box</mat-icon>
+      </button>
+      <button mat-fab color="accent" title="Logout" (click)="logout()">
+        <mat-icon [inline]="true">directions_run </mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-fab color="primary" title="Register" [routerLink]="['/register']">
+        <mat-icon [inline]="true">assignment</mat-icon>
+      </button>
+      <button mat-fab color="accent" title="Login" [routerLink]="['/login']">
+        <mat-icon>https</mat-icon>
+      </button>
+    </ng-template>
+    <button mat-fab color="warn" title="Like Us !">
+      <mat-icon [inline]="true">favorite</mat-icon>
+    </button>
+  </div>
+
+</div>

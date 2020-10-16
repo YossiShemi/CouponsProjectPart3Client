@@ -1,0 +1,12 @@
+img {
+  width: 70%;
+  height: 70%;
+}
+
+div {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+  cursor: pointer;
+}

@@ -1,0 +1,60 @@
+<div class="loginFormDiv">
+
+  <h1 class="loginTitle"> Login </h1>
+
+  <img src="../../../assets/images/person.png" alt="">
+
+  <form class="loginForm">
+
+    <mat-form-field>
+      <mat-label> Email</mat-label>
+      <input matInput [formControl]="form.get('email')" placeholder="Ex. pat@example.com">
+
+      <mat-error *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="form.get('email').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Password</mat-label>
+      <input matInput [formControl]="form.get('password')" matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="form.get('password').hasError('minlength') && !form.get('password').hasError('required')">
+        Please enter a valid password (Minimum length: 4)
+      </mat-error>
+      <mat-error *ngIf="form.get('password').hasError('maxlength') && !form.get('password').hasError('required')">
+        Please enter a valid password (Maximum length: 20)
+      </mat-error>
+      <mat-error *ngIf="form.get('password').hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill" class="who">
+      <mat-label>Client Type</mat-label>
+      <mat-select matNativeControl matInput [formControl]="form.get('clientType')">
+        <mat-option value="company">Company</mat-option>
+        <mat-option value="customer">Customer</mat-option>
+        <mat-option value="admin">Admin</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('clientType').hasError('required')">
+        Client Type is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <button class="button" mat-button [disabled]="form.invalid || form.disabled" (click)="login()">
+      Log in
+    </button>
+
+  </form>
+
+</div>
