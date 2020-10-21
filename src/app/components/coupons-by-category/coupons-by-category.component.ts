@@ -6,8 +6,8 @@ import { CouponsService } from './../../services/coupons.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SureDialogComponent } from '../sure-dialog/sure-dialog.component';
-import { ErrorDialogComponent } from '../error-dialog/error-dialog.component';
+import { SureDialogComponent } from '../dialogs/sure-dialog/sure-dialog.component';
+import { ErrorDialogComponent } from '../dialogs/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-coupons-by-category',
@@ -30,18 +30,20 @@ export class CouponsByCategoryComponent implements OnInit {
     public secureService: SecureService,
     public clientDetailsService: ClientDetailsService,
     private dialog: MatDialog,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar) {
+      this.coupons=[];
+      this.coupons2=[];  
+     }
 
   ngOnInit(): void {
-    this.coupons=[];
-    this.coupons2=[];  
+
     
     this.couponsService.getAllCouponsByCategory(this.category).subscribe(
       coupons => {
         this.coupons = [...coupons];
         this.couponsToDisplay();
       },
-      error => {});  
+      error => {});        
   }
 
   couponsToDisplay=()=>{

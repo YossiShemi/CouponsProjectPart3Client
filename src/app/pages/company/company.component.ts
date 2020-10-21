@@ -1,5 +1,5 @@
-import { AddCouponDialogComponent } from './../../components/add-coupon-dialog/add-coupon-dialog.component';
-import { UpdateCouponDialogComponent } from './../../components/update-coupon-dialog/update-coupon-dialog.component';
+import { AddCouponDialogComponent } from './../../components/dialogs/add-coupon-dialog/add-coupon-dialog.component';
+import { UpdateCouponDialogComponent } from './../../components/dialogs/update-coupon-dialog/update-coupon-dialog.component';
 import { CompanyService } from './../../services/company.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Coupon } from 'src/app/models/Coupon';
-import { SureDialogComponent } from 'src/app/components/sure-dialog/sure-dialog.component';
+import { SureDialogComponent } from 'src/app/components/dialogs/sure-dialog/sure-dialog.component';
 import { ClientDetailsService } from 'src/app/services/client-details.service';
 import { SecureService } from 'src/app/services/secure.service';
 

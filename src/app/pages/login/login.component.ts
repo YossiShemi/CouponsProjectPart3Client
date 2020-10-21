@@ -1,5 +1,4 @@
-import { async } from '@angular/core/testing';
-import { ErrorDialogComponent } from './../../components/error-dialog/error-dialog.component';
+import { ErrorDialogComponent } from './../../components/dialogs/error-dialog/error-dialog.component';
 import { ClientDetailsService } from './../../services/client-details.service';
 import { CustomerService } from './../../services/customer.service';
 import { CompanyService } from './../../services/company.service';

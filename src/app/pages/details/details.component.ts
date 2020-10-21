@@ -1,4 +1,4 @@
-import { UpdateCompanyDialogComponent } from './../../components/update-company-dialog/update-company-dialog.component';
+import { UpdateCompanyDialogComponent } from './../../components/dialogs/update-company-dialog/update-company-dialog.component';
 import { ClientDetailsService } from './../../services/client-details.service';
 import { Customer } from 'src/app/models/Customer';
 import { Company } from 'src/app/models/Company';
@@ -6,7 +6,7 @@ import { SecureService } from 'src/app/services/secure.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UpdateCustomerDialogComponent } from 'src/app/components/update-customer-dialog/update-customer-dialog.component';
+import { UpdateCustomerDialogComponent } from 'src/app/components/dialogs/update-customer-dialog/update-customer-dialog.component';
 
 @Component({
   selector: 'app-details',
@@ -30,6 +30,7 @@ export class DetailsComponent implements OnInit {
       }
 
   ngOnInit(): void {
+console.log(this.secureService);
 
     if(this.secureService.getIsLoggedIn){
       if(this.secureService.getService()==='company'){

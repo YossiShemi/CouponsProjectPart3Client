@@ -1,0 +1,64 @@
+<div class="addCustomerDialog">
+
+  <h2 mat-dialog-title>Add New Customer</h2>
+
+  <mat-dialog-content class="mat-typography">
+    <h3>Enter customer details: </h3>
+  </mat-dialog-content>
+
+  <div class="registerForm">
+    <mat-form-field>
+      <mat-label> Email</mat-label>
+      <input matInput [formControl]="customer.get('email')" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="customer.get('email').hasError('email') && !customer.get('email').hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="customer.get('email').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Password</mat-label>
+      <input matInput [formControl]="customer.get('password')" matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error
+        *ngIf="customer.get('password').hasError('minlength') && !customer.get('password').hasError('required')">
+        Please enter a valid password (Minimum length: 4)
+      </mat-error>
+      <mat-error
+        *ngIf="customer.get('password').hasError('maxlength') && !customer.get('password').hasError('required')">
+        Please enter a valid password (Maximum length: 20)
+      </mat-error>
+      <mat-error *ngIf="customer.get('password').hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> First Name</mat-label>
+      <input matInput [formControl]="customer.get('first')" placeholder="John">
+      <mat-error *ngIf="customer.get('first').hasError('required')">
+        First Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Last Name</mat-label>
+      <input matInput [formControl]="customer.get('last')" placeholder="Doe">
+      <mat-error *ngIf="customer.get('last').hasError('required')">
+        Last Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button [mat-dialog-close]="true" (click)="addCustomer()" cdkFocusInitial
+        [disabled]="customer.invalid || customer.disabled">Add</button>
+    </div>
+  </div>
+
+</div>

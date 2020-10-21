@@ -1,0 +1,34 @@
+
+
+
+<ng-container *ngIf="category!=='all'; else elseTemplate">
+    <div class="title">
+        <h1> {{category}}</h1>
+    </div>
+</ng-container>
+<ng-template #elseTemplate>
+    <div class="title">
+        <h1> All Coupons</h1>
+    </div>
+</ng-template>
+
+
+
+<div class="container">
+    <div class="categories">
+    <h3 [routerLink]="[ '/coupons','all']" > All Coupons</h3>
+     <h3 [routerLink]="[ '/coupons','Food']" > <mat-icon> fastfood</mat-icon> Food</h3>
+     <h3 [routerLink]="[ '/coupons','Sport']"> <mat-icon> directions_run</mat-icon> Sport</h3>
+     <h3 [routerLink]="[ '/coupons','Electricity']" > <mat-icon>computer</mat-icon> Electricity</h3>
+     <h3 [routerLink]="[ '/coupons','Vacation']"> <mat-icon>airline_seat_flat_angled</mat-icon>Vacation</h3>
+    </div>
+    
+    
+    <div class="cards">
+        <div class="card" *ngFor="let coupon of coupons" [routerLink]="[ '/coupon',coupon.id]">
+            <img src={{coupon.image}} alt="">
+            <h1>{{coupon.title}}</h1>
+            <h3>Price: {{coupon.price}}$ | Amount: {{coupon.amount}} </h3>
+        </div>
+    </div>
+</div>

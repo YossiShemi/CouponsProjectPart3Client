@@ -1,6 +1,8 @@
-<div class="couponCategoryTitle"> {{category}}</div>
-
-<hr>
+<div class="title">
+  <hr>
+  <div class="couponCategoryTitle"> {{category}}</div>
+  <hr>
+</div>
 
 <div class="cards-container">
   <button mat-fab aria-label="Example icon button with a bookmark icon" class="arrowButton" (click)="prev()"
@@ -9,7 +11,7 @@
   </button>
   
   <div class="cards">
-    <mat-card class="card" *ngFor="let coupon of coupons2">
+    <mat-card class="card" *ngFor="let coupon of coupons2" [routerLink]="[ '/coupon',coupon.id]">
       <div class="ribbon ribbon-top-right" *ngIf="coupon.price%5===0"><span> &nbsp;&nbsp;&nbsp;  🔥🔥HOT ITEM🔥🔥   </span></div>
       <mat-card-header>
         <div mat-card-avatar class="card-small-image"></div>
@@ -34,3 +36,5 @@
     ►
   </button>
 </div>
+
+<button class="more" [routerLink]="[ '/coupons',category]"><span>All {{category}}`s Products   </span></button>

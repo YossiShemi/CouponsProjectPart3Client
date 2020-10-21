@@ -1,15 +1,15 @@
 .title {
   text-align: center;
-  margin-top: 15px;
-  text-shadow: 0px 3px 0px #b2a98f,
+  margin-top: 20px;
+  text-shadow: 0px 3px 0px #f4f4f4,
     0px 10px 8px rgba(0, 0, 0, 0.15),
     0px 15px 2px rgba(0, 0, 0, 0.1),
     0px 24px 20px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   font-size: 50px;
-  color: rgb(95, 178, 255);
-}
 
+
+}
 .container {
   width: 80%;
   margin: auto;
@@ -17,7 +17,7 @@
   justify-items: center;
   display: flex;
   margin-top: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -53,7 +53,7 @@
 
 .card--2 .card__img,
 .card--2 .card__img--hover {
-  background-image: url('https://image.freepik.com/free-photo/ipad-with-diagram_1098-192.jpg');
+  background-image: url('https://image.freepik.com/free-photo/smiling-young-businessman-standing-outside-office-building-holding-mobile-hand_23-2148026629.jpg');
 }
 
 
@@ -95,14 +95,15 @@
 .card_details {
   font-size: 15px;
   font-weight: bold;
-  color: #868686;
   margin-top: 15px;
+  text-align: center;
+  color: goldenrod;
 }
 
 .card__detail {
   font-weight: bold;
   text-decoration: none;
-  color: #AD7D52;
+  color: black;
 }
 
 span {
@@ -117,10 +118,13 @@ article {
   display: flex;
   justify-content: center;
   margin: 5px 0 15px 0;
+  
 }
 
 button {
   width: 40%;
+  background: linear-gradient(-150deg, rgb(73, 73, 73),#ccc , #f4f4f4);
+
 }
 
 
@@ -129,15 +133,8 @@ button {
   and (max-device-width: 850px) 
    { 
     .title {
-      text-align: center;
-      margin-top: 50px;
-      text-shadow: 0px 3px 0px #b2a98f,
-        0px 10px 8px rgba(0, 0, 0, 0.15),
-        0px 15px 2px rgba(0, 0, 0, 0.1),
-        0px 24px 20px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-      font-size: 28px;
-      color: rgb(95, 178, 255);
+      font-size: 35px;
+      line-height: 40px;
     }
 
     .container {
@@ -170,15 +167,8 @@ and (max-width : 1224px)
 and (min-width : 500px) {
 
   .title {
-    text-align: center;
     margin-top: 50px;
-    text-shadow: 0px 3px 0px #b2a98f,
-      0px 10px 8px rgba(0, 0, 0, 0.15),
-      0px 15px 2px rgba(0, 0, 0, 0.1),
-      0px 24px 20px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
     font-size: 50px;
-    color: rgb(95, 178, 255);
   }
 
   .container {

@@ -1,23 +1,43 @@
-<div class="banner">
-  <img src="../../../assets/images/banner.jpg" alt="banner">
+
+  <div class="banner">
+    All Coupons. One Place.
+  </div>
+
+
+  
+<div class="coupons-cateories-images">
+  <div class="category food" [routerLink]="[ '/coupons','Food']"> Food</div>
+  <div class="category electricity" [routerLink]="[ '/coupons','Electricity']">Electricity</div>
+  <div class="category sport" [routerLink]="[ '/coupons','Sport']">Sport</div>
+  <div class="category vacation" [routerLink]="[ '/coupons','Vacation']">Vacation</div>
 </div>
 
-<div class="announcments">
-  <app-announcment text1="50% For First Purchase" img1="fas fa-percentage"
-    text2="1000$ Gift Card For Each Friend You Invite" img2="fas fa-gift"
-    text3="Liked Us ? Tell Your Friends. Don't Like?  Tell Us " img3="fas fa-thumbs-up">
-  </app-announcment>
+
+<div class="hello">
+  <ng-container *ngIf="secureService.getIsLoggedIn(); else guest">
+    <p>Hi <span> -{{getTitle()}}- 👏</span> </p>
+  </ng-container>
+  <ng-template #guest>
+    <p> Welcome <span class="wave-emoji"> 👋</span> </p>
+  </ng-template>
 </div>
 
-<p>*Only registered <span>customers</span> are able to purchase coupons </p>
+<div class="notes" *ngIf="!secureService.getIsLoggedIn()">
+  <p>*Only registered <span>customers</span> are able to purchase coupons. 
+   Not a member yet ? <span class="spanClickHere" [routerLink]="['/register'] "> Click Here </span> </p>
+</div>
 
-<div class="CouponsGeneralContainer">
+
+<div class="couponsGeneralContainer">
   <app-coupons-by-category category="Food"></app-coupons-by-category>
   <app-coupons-by-category category="Electricity"></app-coupons-by-category>
-  <div class="bg">   </div>
   <app-coupons-by-category category="Sport"></app-coupons-by-category>
   <app-coupons-by-category category="Vacation"></app-coupons-by-category>
 </div>
 
 
-<app-contact></app-contact>
+
+
+
+
+

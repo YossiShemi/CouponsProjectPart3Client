@@ -1,13 +1,13 @@
 .title {
   text-align: center;
-  margin-top: 50px;
-  text-shadow: 0px 3px 0px #b2a98f,
+  margin-top: 20px;
+  text-shadow: 0px 3px 0px #f4f4f4,
     0px 10px 8px rgba(0, 0, 0, 0.15),
     0px 15px 2px rgba(0, 0, 0, 0.1),
     0px 24px 20px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   font-size: 50px;
-  color: rgb(95, 178, 255);
+
 
 }
 
@@ -105,7 +105,6 @@ p {
   margin-top: 5px;
   font-size: 15px;
   font-weight: bold;
-  color: blue;
 }
 
 .spinner {
@@ -113,36 +112,19 @@ p {
 }
 
 
-@media only screen 
-  and (min-device-width: 300px) 
-  and (max-device-width: 850px) 
-   { 
-    .title {
-      text-align: center;
-      margin-top: 50px;
-      text-shadow: 0px 3px 0px #b2a98f,
-        0px 10px 8px rgba(0, 0, 0, 0.15),
-        0px 15px 2px rgba(0, 0, 0, 0.1),
-        0px 24px 20px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-      font-size: 25px;
-      color: rgb(95, 178, 255);
-    }
-
-    .admin {
-      width: 100%;
-    }
-}
-
-
-
-
 @media only screen and (min-device-width: 300px) and (max-device-width: 850px) {
 
-  .mat-column-description {
-  display: none;
+  .title {
+    margin-top: 50px;
+    font-size: 37px;
+    line-height: 42px;
   }
 
+  .mat-column-description {
+    display: none;
+  }
+
+  .admin {
+    width: 100%;
+  }
 }
-
-

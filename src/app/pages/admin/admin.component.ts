@@ -1,8 +1,8 @@
-import { UpdateCustomerDialogComponent } from './../../components/update-customer-dialog/update-customer-dialog.component';
-import { AddCustomerDialogComponent } from './../../components/add-customer-dialog/add-customer-dialog.component';
-import { UpdateCompanyDialogComponent } from './../../components/update-company-dialog/update-company-dialog.component';
-import { AddCompanyDialogComponent } from './../../components/add-company-dialog/add-company-dialog.component';
-import { SureDialogComponent } from './../../components/sure-dialog/sure-dialog.component';
+import { UpdateCustomerDialogComponent } from './../../components/dialogs/update-customer-dialog/update-customer-dialog.component';
+import { AddCustomerDialogComponent } from './../../components/dialogs/add-customer-dialog/add-customer-dialog.component';
+import { UpdateCompanyDialogComponent } from './../../components/dialogs/update-company-dialog/update-company-dialog.component';
+import { AddCompanyDialogComponent } from './../../components/dialogs/add-company-dialog/add-company-dialog.component';
+import { SureDialogComponent } from './../../components/dialogs/sure-dialog/sure-dialog.component';
 import { Company } from './../../models/Company';
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';

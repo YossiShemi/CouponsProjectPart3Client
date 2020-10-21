@@ -16,8 +16,6 @@ import { DetailsComponent } from './pages/details/details.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ButtonComponent } from './components/button/button.component';
-import { AnnouncmentComponent } from './components/announcment/announcment.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
@@ -27,25 +25,28 @@ import { CompanyComponent } from './pages/company/company.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { SureDialogComponent } from './components/sure-dialog/sure-dialog.component';
-import { AddCompanyDialogComponent } from './components/add-company-dialog/add-company-dialog.component';
-import { UpdateCompanyDialogComponent } from './components/update-company-dialog/update-company-dialog.component';
-import { AddCustomerDialogComponent } from './components/add-customer-dialog/add-customer-dialog.component';
-import { UpdateCustomerDialogComponent } from './components/update-customer-dialog/update-customer-dialog.component';
-import { UpdateCouponDialogComponent } from './components/update-coupon-dialog/update-coupon-dialog.component';
+import { SureDialogComponent } from './components/dialogs/sure-dialog/sure-dialog.component';
+import { AddCompanyDialogComponent } from './components/dialogs/add-company-dialog/add-company-dialog.component';
+import { UpdateCompanyDialogComponent } from './components/dialogs/update-company-dialog/update-company-dialog.component';
+import { AddCustomerDialogComponent } from './components/dialogs/add-customer-dialog/add-customer-dialog.component';
+import { UpdateCustomerDialogComponent } from './components/dialogs/update-customer-dialog/update-customer-dialog.component';
+import { UpdateCouponDialogComponent } from './components/dialogs/update-coupon-dialog/update-coupon-dialog.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { AddCouponDialogComponent } from './components/add-coupon-dialog/add-coupon-dialog.component';
+import { AddCouponDialogComponent } from './components/dialogs/add-coupon-dialog/add-coupon-dialog.component';
 import { CouponsByCategoryComponent } from './components/coupons-by-category/coupons-by-category.component';
 import {MatCardModule} from '@angular/material/card';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ShellComponent } from './pages/shell/shell.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-dialog.component';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TokenInterceptor} from './interceptors/token.interceptor';
-import { DescriptionDialogComponent } from './components/description-dialog/description-dialog.component'
+import { DescriptionDialogComponent } from './components/dialogs/description-dialog/description-dialog.component';
+import { CouponsComponent } from './pages/coupons/coupons.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { CouponDetailsComponent } from './pages/coupon-details/coupon-details.component';
+
 
 @NgModule({
   declarations: [
@@ -56,8 +57,6 @@ import { DescriptionDialogComponent } from './components/description-dialog/desc
     RegisterComponent,
     LoginComponent,
     DetailsComponent,
-    ButtonComponent,
-    AnnouncmentComponent,
     AdminComponent,
     CompanyComponent,
     CustomerComponent,
@@ -72,8 +71,9 @@ import { DescriptionDialogComponent } from './components/description-dialog/desc
     ShellComponent,
     SpinnerComponent,
     ErrorDialogComponent,
-    ContactComponent,
     DescriptionDialogComponent,
+    CouponsComponent,
+    CouponDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +96,8 @@ import { DescriptionDialogComponent } from './components/description-dialog/desc
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    MatMenuModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { ErrorDialogComponent } from 'src/app/components/error-dialog/error-dialog.component';
+import { ErrorDialogComponent } from 'src/app/components/dialogs/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-register',

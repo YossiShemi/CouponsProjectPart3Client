@@ -4,52 +4,94 @@
     <img src="../../../assets/images/logo.png" alt="">
   </div>
 
-  <div class="hello">
-    <ng-container *ngIf="secureService.getIsLoggedIn(); else guest">
-      <p>Hi <span> -{{getTitle()}}- 👏</span> </p>
-    </ng-container>
-    <ng-template #guest>
-      <p> Welcome <span> Guest </span> <span class="wave-emoji"> 👋</span> </p>
-    </ng-template>
-
-    <p class="date">{{date | date:'dd/MM/yyyy HH:mm:ss' }}</p>
-
-  </div>
-
-
   <div class="options">
     <ng-container *ngIf="secureService.getIsLoggedIn(); else elseTemplate">
-      <button *ngIf="secureService.getService()==='admin'" mat-fab title="admin" [routerLink]="['/admin']"
-        color="default">
-        <mat-icon>date_range</mat-icon>
-      </button>
-      <button *ngIf="secureService.getService()==='company'" mat-fab title="company" [routerLink]="['/company']"
-        color="default">
-        <mat-icon>date_range</mat-icon>
-      </button>
-      <button *ngIf="secureService.getService()==='customer'" mat-fab title="cusotmer" [routerLink]="['/customer']"
-        color="default">
-        <mat-icon>date_range</mat-icon>
-      </button>
-      <button mat-fab color="primary" title="Details" [routerLink]="['/details']"
-        *ngIf="secureService.getService()!=='admin'">
-        <mat-icon [inline]="true">account_box</mat-icon>
-      </button>
-      <button mat-fab color="accent" title="Logout" (click)="logout()">
-        <mat-icon [inline]="true">directions_run </mat-icon>
-      </button>
+      <div class="button-w-text" *ngIf="secureService.getService()==='admin'">
+        <button title="admin" [routerLink]="['/admin']" color="default">
+          <mat-icon [inline]="true">date_range</mat-icon>
+        </button>
+        <p>Data</p>
+      </div>
+      <div class="button-w-text" *ngIf="secureService.getService()==='company'">
+        <button title="company" [routerLink]="['/company']" color="default">
+          <mat-icon [inline]="true">date_range</mat-icon>
+        </button>
+        <p>Data</p>
+      </div>
+      <div class="button-w-text" *ngIf="secureService.getService()==='customer'">
+        <button title="cusotmer" [routerLink]="['/customer']" color="default">
+          <mat-icon [inline]="true">date_range</mat-icon>
+        </button>
+        <p>Data</p>
+      </div>
+      <div class="button-w-text" *ngIf="secureService.getService()!=='admin'">
+        <button title="Details" [routerLink]="['/details']">
+          <mat-icon [inline]="true">account_box</mat-icon>
+        </button>
+        <p>Details</p>
+      </div>
+      <div class="button-w-text">
+        <button title="Logout" (click)="logout()">
+          <mat-icon [inline]="true">directions_run </mat-icon>
+        </button>
+        <p>Logout</p>
+      </div>
     </ng-container>
-    <ng-template #elseTemplate>
-      <button mat-fab color="primary" title="Register" [routerLink]="['/register']">
-        <mat-icon [inline]="true">assignment</mat-icon>
-      </button>
-      <button mat-fab color="accent" title="Login" [routerLink]="['/login']">
-        <mat-icon>https</mat-icon>
-      </button>
-    </ng-template>
-    <button mat-fab color="warn" title="Like Us !">
-      <mat-icon [inline]="true">favorite</mat-icon>
-    </button>
-  </div>
 
+    <ng-template #elseTemplate>
+
+      <div class="button-w-text">
+        <button title="Register" [routerLink]="['/register']">
+          <mat-icon [inline]="true">assignment</mat-icon>
+        </button>
+        <p>Register</p>
+      </div>
+
+      <div class="button-w-text">
+        <button title="Login" [routerLink]="['/login']">
+          <mat-icon [inline]="true">https</mat-icon>
+        </button>
+        <p>Login</p>
+      </div>
+
+    </ng-template>
+
+    <div class="button-w-text">
+      <button title="Like Us !">
+        <mat-icon [inline]="true">favorite</mat-icon>
+      </button>
+      <p>Shop</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<div class="menu-container">
+  <div class="app-menu">
+    <div class="menu-option" [routerLink]="[ '/homepage']">
+      <p>Homepage</p>
+    </div>
+    <div class="menu-option">
+      <p> <a href="https://www.linkedin.com/in/yossishemi/" target="blank ">Contact Us</a>
+      </p>
+    </div>
+    <div class="menu-option">
+      <div mat-button [matMenuTriggerFor]="menuu">Categories<mat-icon>arrow_drop_down</mat-icon>
+      </div>
+      <mat-menu #menuu="matMenu">
+        <div mat-menu-item [routerLink]="[ '/coupons','Food']">Food</div>
+        <div mat-menu-item [routerLink]="[ '/coupons','Sport']">Sport</div>
+        <div mat-menu-item [routerLink]="[ '/coupons','Vacation']">Vacation</div>
+        <div mat-menu-item [routerLink]="[ '/coupons','Electricity']">Electricity</div>
+      </mat-menu>
+    </div>
+    <div class="menu-option" [routerLink]="[ '/coupons','all']">
+      <p>Coupons</p>
+    </div>
+  </div>
 </div>
