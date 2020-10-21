@@ -6,7 +6,7 @@
   background-image: url('../../../assets/images/reloggBG.jpg');
   height: 100%;
   width: 100%;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -31,6 +31,7 @@
 
 h1{
   font-size: 80px;
+  color: black;
 }
 
 .loginForm {
@@ -94,7 +95,7 @@ span{
 @media only screen and (min-device-width: 300px) and (max-device-width: 850px) {
  
   .bg {
-    background-position-x: 3%;
+    background-position: left;
   }
   
   .loginFormDiv {

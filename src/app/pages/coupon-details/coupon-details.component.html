@@ -24,13 +24,14 @@
           <img src={{coupon.image}} alt="">
         </div>
         <div class="details">
-          <h1>★{{coupon.title}}★</h1>
-          <h2>Price: <span class="oldPrice">{{coupon.price+19.99}}$ </span>  <span class="newPrice">{{coupon.price-0.01}} $</span>  </h2>
+          <h1>{{coupon.title}}</h1>
+          <h2>Price: <span class="oldPrice">{{coupon.price+19.99}}$ </span> &nbsp;	 <span class="newPrice">{{coupon.price-0.01}} $</span>  </h2>
           <h2> Amount: {{coupon.amount}} | Category: {{coupon.category}}</h2>
           <h3> Valid between: {{coupon.startDate | date:'dd/MM/yyyy'}}- {{coupon.endDate | date:'dd/MM/yyyy'}}</h3>
           <h4>{{coupon.description}}</h4>
           <button mat-button class="purchase" [disabled]=" !(secureService.getService()==='customer')"
             (click)="purchaseCoupon(coupon)">Purchase</button>
+          <h6 *ngIf="secureService.getService()!=='customer'">*** Only logged in customers are able to purchase *** </h6>
         </div>
       </div>
       

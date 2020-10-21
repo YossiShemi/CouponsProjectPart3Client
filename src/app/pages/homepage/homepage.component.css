@@ -53,7 +53,7 @@
   height: 600px;
   background-image: url('../../../assets/images/banner.jpg');
   background-size: cover;
-  line-height: 600px;
+  line-height: 950px;
   text-align: center;
   color: white;
   font-size: 130px;
@@ -61,7 +61,7 @@
   -webkit-box-shadow: inset 0px 19px 73px 83px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 19px 73px 83px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 19px 73px 83px rgba(0, 0, 0, 0.75);
-  text-shadow: #FFF 0px 0px 15px, gold 0px 0px 20px, gold 0px 0px 30px, gold 0px 0px 40px, gold 0px 0px 50px;
+  text-shadow: #FFF 0px 0px 15px,  
 }
 
 
@@ -163,9 +163,12 @@ span {
 @media only screen and (min-device-width: 300px) and (max-device-width: 850px) {
   .banner {
     height: 160px;
+    width: 87%;
+    margin: auto;
+    margin-top: 20px;
     background-position-y: 1%;
     line-height: 170px;
-    font-size: 33px;
+    font-size: 30px;
     box-shadow: inset 10px 10px 179px -13px rgba(0,0,0,0.75);
   }
 
