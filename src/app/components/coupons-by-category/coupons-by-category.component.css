@@ -219,6 +219,9 @@ mat-card-content {
     height: 350px;
     margin: 30px 15px 0px 10px;
     transition: transform .2s;
+    -webkit-box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);
   }
 
   .card-small-image {
@@ -254,13 +257,7 @@ mat-card-content {
   }
 
   .arrowButton {
-    background-color: white;
-    color: black;
-    margin: 200px 5px 0 10px;
-    width: 6%;
-    line-height: 2px;
-    outline: none;
-    font-size: 15px;
+  display: none;
   }
 
 
