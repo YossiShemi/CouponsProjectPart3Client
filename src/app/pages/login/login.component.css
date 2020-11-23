@@ -1,58 +1,40 @@
-* {
-  box-sizing: border-box;
-}
 
-.bg {
-  background-image: url('../../../assets/images/reloggBG.jpg');
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.loginFormDiv {
+.container{
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
-  background-color: #ccc; /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 400px;
-  padding: 10px;
+  justify-content: center;
+  justify-items: center;
   text-align: center;
+  margin-top: 30px;
 }
 
 h1{
+  margin-left: 20px;
   font-size: 80px;
   color: black;
 }
 
-.loginForm {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-
-.loginTitle {
+h3{
   text-align: center;
-  font-weight: bold;
+  font-size: 25px;
 }
 
-img {
-  width: 70px;
-  height: 70px;
-  margin: auto;
-  margin-top: 15px;
-  filter: grayscale(10);
+.loginForm {
+width: 350px;
+margin: auto;
+margin-top: 20px;
+margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+justify-items: center;
+text-align: center;
+padding: 20px;
+border: 2px #ccc solid;
+border-radius: 20px;
 }
 
 .button {
@@ -65,6 +47,7 @@ img {
   font-size: 18px;
   margin-top: 15px;
   cursor: pointer;
+  width: 250px;
 }
 .button:disabled,
 .button[disabled]{
@@ -79,7 +62,7 @@ mat-form-field, mat-label{
 h2{
   font-size: 15px;
   margin-top: 5px;
-  color: #f4f4f4;
+  color: #cccccc;
   outline: none;
 }
 span{
@@ -90,19 +73,22 @@ span{
   outline: none;
 }
 
+img{
+  width: 80%;
+  height: 180px;
+  margin: auto;
+}
+
 
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 850px) {
  
-  .bg {
-    background-position: left;
-  }
-  
-  .loginFormDiv {
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    width: 300px;
-    padding: 20px;
-  }
+  .loginForm {
+    width: 250px;
+    }
+
+    img{
+      width: 300px;
+    }
+
 }
